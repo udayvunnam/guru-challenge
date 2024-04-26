@@ -1,6 +1,7 @@
 # Chiliz Challenge Metaverse App
 Avax version of Challenge Metaverse ( Version of Hiring Purpose )
 
+
 ## To-Do for Candidates
 
 This version include Single Metaverse landing page, and also connected with Node.js back-end to interact Smart Contract. 
