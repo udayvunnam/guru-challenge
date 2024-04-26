@@ -8,10 +8,11 @@ const MintProgress = ({ minted, maxTokens }) => {
         <div
           className="bg-red"
           style={{
-            width: `${minted < maxTokens / 5
+            width: `${
+              minted < maxTokens / 5
                 ? (minted / (maxTokens / 5)) * 100
                 : (minted / maxTokens) * 100
-              }%`,
+            }%`,
             height: "100%",
           }}
         ></div>

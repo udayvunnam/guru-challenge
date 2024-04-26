@@ -3,7 +3,7 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu"
 import Woolf from './Woolf'
 import { parseGraphObject } from '../utils/query'
 
-const TokenList = ({ title, active, items, selected, toggleSelected, stats }) => {
+const TokenList = ({title, active, items, selected, toggleSelected, stats}) => {
 
   const isItemSelected = (id) => !!selected.find((el) => el.id === id);
 
@@ -18,9 +18,9 @@ const TokenList = ({ title, active, items, selected, toggleSelected, stats }) =>
     const { isFirstItemVisible } = React.useContext(VisibilityContext)
 
     return (
-      <div
+      <div 
         className="relative"
-        onClick={() => { }}
+        onClick={() => {}}
       >
         {/* <img src="/images/arrow-left.svg" alt="previous" style={{
           opacity: isFirstItemVisible ? 0 : 1,
@@ -35,9 +35,9 @@ const TokenList = ({ title, active, items, selected, toggleSelected, stats }) =>
     const { isLastItemVisible } = React.useContext(VisibilityContext)
 
     return (
-      <div
+      <div 
         className="relative"
-        onClick={() => { }}
+        onClick={() => {}}
       >
         {/* <img src="/images/arrow-right.svg" alt="next" style={{
           visibility: isLastItemVisible ? 0 : 1,
@@ -50,10 +50,10 @@ const TokenList = ({ title, active, items, selected, toggleSelected, stats }) =>
 
   return (
     <div className="w-full" style={{
-      border: '4px rgba(42,35,30,1.0) solid',
-      borderTop: 0,
-      borderRight: 0,
-      padding: '2px',
+      border:'4px rgba(42,35,30,1.0) solid', 
+      borderTop:0, 
+      borderRight:0, 
+      padding:'2px',
       opacity: active ? '1.0' : '0.5'
     }}>
       <div className="text-red font-console">
@@ -83,9 +83,9 @@ const TokenList = ({ title, active, items, selected, toggleSelected, stats }) =>
           No Tokens
         </div>
       )}
-
+      
     </div>
-
+    
   )
 
 }

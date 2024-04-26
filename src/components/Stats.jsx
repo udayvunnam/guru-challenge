@@ -15,15 +15,17 @@ const Stats = ({ stats, users }) => {
       <div className="flex flex-col items-center font-pixel gap-4 text-center">
         <div className="w-full flex justify-around items-center">
           <div
-            className={`${global ? "underline text-red text-xl" : "text-gray"
-              } font-console cursor-pointer`}
+            className={`${
+              global ? "underline text-red text-xl" : "text-gray"
+            } font-console cursor-pointer`}
             onClick={() => setGlobal(true)}
           >
             Game Status
           </div>
           <div
-            className={`${!global ? "underline text-red text-xl" : "text-gray"
-              } font-console cursor-pointer`}
+            className={`${
+              !global ? "underline text-red text-xl" : "text-gray"
+            } font-console cursor-pointer`}
             onClick={() => setGlobal(false)}
           >
             Leaderboard
@@ -67,7 +69,7 @@ const Stats = ({ stats, users }) => {
         ) : (
           <ol type="1" className="w-full font-console">
             {users ? (
-              users.map((user, index) => {
+                users.map((user, index) => {
                 if (BigNumber.from(user.claimedWool).eq(BigNumber.from("0")))
                   return null;
                 return (
