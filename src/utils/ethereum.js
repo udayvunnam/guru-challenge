@@ -1,8 +1,8 @@
-import { providers, utils } from "ethers";
-import { useEffect, useState } from "react";
+import { providers, utils } from 'ethers';
+import { useEffect, useState } from 'react';
 
 export const _isMetaMaskInstalled = () => {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
   const { ethereum } = window;
   return Boolean(ethereum && ethereum.isMetaMask);
 };
@@ -20,12 +20,12 @@ export const _getChain = async () => {
 
 const _onAccountsChanged = (callback) => {
   if (!_isMetaMaskInstalled()) return;
-  window.ethereum.on("accountsChanged", callback);
+  window.ethereum.on('accountsChanged', callback);
 };
 
 const _onChainChanged = (callback) => {
   if (!_isMetaMaskInstalled()) return;
-  window.ethereum.on("chainChanged", callback);
+  window.ethereum.on('chainChanged', callback);
 };
 
 export const _getAddress = async () => {
@@ -73,7 +73,7 @@ export const WalletHook = () => {
 export const connectMetamask = async () => {
   if (!_isMetaMaskInstalled()) return false;
   try {
-    await window.ethereum.request({ method: "eth_requestAccounts" });
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
     return true;
   } catch (e) {
     console.log(e);
@@ -85,10 +85,10 @@ export const switchToMainnet = async () => {
   if (!_isMetaMaskInstalled()) return false;
   try {
     await window.ethereum.request({
-      method: "wallet_switchEthereumChain",
+      method: 'wallet_switchEthereumChain',
       params: [
         {
-          chainId: `0x${parseInt(process.env.REACT_APP_CHAIN).toString(16)}`,
+          chainId: `0x${parseInt(import.meta.env.REACT_APP_CHAIN).toString(16)}`,
         },
       ],
     });
@@ -121,14 +121,12 @@ export const watchTransaction = (txHash, callback) => {
 export const parseBigNumber = (bn, decimals = 2) => {
   if (!bn) return 0;
   try {
-    return numberWithCommas(
-      parseFloat(utils.formatUnits(bn, "gwei")).toFixed(decimals)
-    );
+    return numberWithCommas(parseFloat(utils.formatUnits(bn, 'gwei')).toFixed(decimals));
   } catch (e) {
     return bn;
   }
 };
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
