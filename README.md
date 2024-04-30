@@ -26,6 +26,7 @@ Once you confirm all features of the project, send report to email we contacted 
 ### Backend
 
 - issues while installing `ndb -> node-pty`. We don't need dependency anymore. `node --inspect index.js` will suffice
+- A lot of packages are unnecessary
 
 ### Repo
 
